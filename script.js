@@ -80,3 +80,9 @@ const rumahMakanBaru2 = {
   cabang: "Surabaya",
 };
 console.log(rumahMakanBaru2);
+
+/*----- Merubah nama object -----  */
+const rumahMakanCopy = { ...rumahMakan };
+rumahMakanCopy.nama = "Rumah makan barokah";
+console.log(rumahMakanCopy.nama); // Rumah makan barokah
+console.log(rumahMakan.nama); // Rumah makan berkah

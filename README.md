@@ -121,3 +121,22 @@ Selanjutnya kita tambahkan property baru pada objek kita yang baru
 ```javascript
 const rumahMakanBaru = {Tahun Berdiri : 1970, ...rumahMakan, Cabang : 'Surabaya'}
 ```
+
+### Merubah nama object
+
+Pertama kita _copy_ datanya dari objek yang ingin kita salin.
+
+```javascript
+const rumahMakanCopy = { ...rumahMakan };
+```
+
+Kemudian setelah semua data diambil kita bisa langsung mengubah namanya menggunakan property `nama` yang sudah ada sebelumnya
+
+```javascript
+rumahMakanCopy.nama = "Rumah makan barokah";
+```
+
+```javascript
+console.log(rumahMakanCopy.nama); // Rumah makan barokah
+console.log(rumahMakan.nama); // Rumah makan berkah
+```
