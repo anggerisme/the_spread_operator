@@ -12,13 +12,93 @@ console.log(tambahArr); // Array(6) [1,2,3,4,5,6]
 
 ### Spread Operator
 
+Hasilnya akan sama dengan cara di atas
+
 ```javascript
 const newArr = [1, 2, 3, ...arr];
 console.log(newArr); // Array(6) [1,2,3,4,5,6]
 ```
 
-Menampilkan datanya saja yang ada di dalam array
+Jika kita ingin menampilkan datanya saja yang ada di dalam array
 
 ```javascript
-console.log(newArr); //
+console.log(newArr); // 1,2,3,4,5,6
+```
+
+## Contoh Kasus
+
+Kita gunakan objek `rumahMakan` yang telah kita buat sebelumnya.
+
+```javascript
+const rumahMakan = {
+  nama: "Rumah makan berkah",
+  lokasi: "Jalan merpati blok m",
+  kategori: ["tradisional", "murah", "warteg"],
+  minuman: ["es teh", "es jeruk", "kopi"],
+  makanan: ["soto", "gulai ikan", "rendang"],
+};
+```
+
+Sebagai contoh kita akan mengambil data makanan dari `objek` diatas (anggap saja kita sedang bertanya "Lauknya apa saja bu?")
+
+```javascript
+const makananya = [...rumahMakan.makanan];
+console.log(makananya); // soto, gulai ikan, rendang
+```
+
+Kita juga bisa menambahkan nilai baru pada suatu array dengan spread operator
+
+```javascript
+const makananya = [...rumahMakan.makanan, mendoan];
+console.log(makananya); soto, gulai ikan, rendang, 'mendoan'
+```
+
+### Meng-_copy_ nilai dari property suatu objek
+
+Menggunakan spread operator untuk menyalin data dari property suatu objek dan memasukkan nilai tersebut ke variable yang baru
+
+```javascript
+const salinMakanan = [...rumahMakan.makanan];
+console.log(salinMakanan);
+```
+
+> Hasilnya sama saja dengan property makanan milik objek `rumahMakan` tapi nilai tersebut sekarang dimiliki oleh variable `salinMakanan`
+
+### Menggabungkan 2 array
+
+```javascript
+const makanMinum = [...rumahMakan.makanan, ...rumahMakan.minuman];
+console.log(makanMinum); // semua Makanan, semua Minuman
+```
+
+### Mengurai data yang dimasukkan ke dalam suatu function
+
+kita masih menggunakan objek yang sama dan menambahkan `function` baru ke dalamnya
+
+```javascript
+pesanMakan: function (menu1, menu2, menu3) {
+    console.log(`Ini dia makananya ${menu1}, ${menu2}, ${menu3}`);
+  }
+```
+
+> Function ini akan mengembalikan nilai yang kita masukkan nanti melalui ketiga parameternya
+
+```javascript
+const menunya = [
+  prompt(`Silahkan pilih menunya, menu 1`),
+  prompt(`Menu 2`),
+  prompt(`Menu 3`),
+];
+```
+
+#### Cara Manual
+
+```javascript
+rumahMakan.pesanMakan(menunya[0], menunya[1], menunya[2]);
+```
+
+#### Spread Operator
+
+```javascript
+rumahMakan.pesanMakan(...menunya);
 ```
