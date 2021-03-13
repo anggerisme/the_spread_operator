@@ -106,3 +106,18 @@ rumahMakan.pesanMakan(...menunya);
 ```
 
 > Spread Operator akan mengurai semua nilai yang ada di variable `menunya`. tanpa harus menuliskanya secara manual satu persatu
+
+### Meng-copy object dan menambahkan property baru di dalamnya
+
+Sama yang telah kita lakukan pada `arrays` kita juga bisa memanipulasi objek dengan spread operator
+
+```javascript
+const rumahMakanBaru = { ...rumahMakan };
+console.log(rumahMakanBaru); // kita berhasil menyalin semua property & methodnya
+```
+
+Selanjutnya kita tambahkan property baru pada objek kita yang baru
+
+```javascript
+const rumahMakanBaru = {Tahun Berdiri : 1970, ...rumahMakan, Cabang : 'Surabaya'}
+```
