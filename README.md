@@ -1,4 +1,4 @@
-# the_spread_operator
+# Spread operator pada javascript
 
 Spread operator pada javascript memungkinkan kita untuk melakukan manipulasi/mengurai data pada `arrays` atau `object` dengan penulisan syntax yang lebih singkat
 
@@ -91,6 +91,8 @@ const menunya = [
 ];
 ```
 
+Kita mulai gunakan functionya dengan input yang kita masukkan melalui kotak dialog prompt.
+
 #### Cara Manual
 
 ```javascript
@@ -102,3 +104,5 @@ rumahMakan.pesanMakan(menunya[0], menunya[1], menunya[2]);
 ```javascript
 rumahMakan.pesanMakan(...menunya);
 ```
+
+> Spread Operator akan mengurai semua nilai yang ada di variable `menunya`. tanpa harus menuliskanya secara manual satu persatu
